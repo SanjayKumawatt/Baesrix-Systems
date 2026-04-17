@@ -187,7 +187,7 @@ export const AboutUsPage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 px-6 py-5 sm:p-6 bg-slate-50/50 dark:bg-slate-900/20">
                   <dt className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide mt-0.5">Email</dt>
                   <dd className="sm:col-span-2 text-base font-medium text-indigo-600 dark:text-indigo-400">
-                    <a href="mailto:contact@baesrixsystems.in" className="hover:underline">contact@baesrixsystems.in</a>
+                    <div className="hover:underline">contact@baesrixsystems.in</div>
                   </dd>
                 </div>
               </dl>

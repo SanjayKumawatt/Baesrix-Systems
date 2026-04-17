@@ -146,12 +146,11 @@ export const ContactPage = () => {
                     <span className="block text-xs font-bold text-slate-400 dark:text-slate-500 mb-1 uppercase tracking-wide">
                       Email
                     </span>
-                    <a 
-                      href="mailto:contact@baesrixsystems.in" 
+                    <div
                       className="text-base font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 hover:underline transition-all"
                     >
                       contact@baesrixsystems.in
-                    </a>
+                    </div>
                   </div>
                 </div>
 

@@ -23,12 +23,11 @@ const Footer = () => {
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
               We build clean, maintainable software and practical AI solutions for businesses that value robust architecture over quick fixes.
             </p>
-            <a 
-              href="mailto:contact@baesrixsystems.in" 
+            <div
               className="inline-flex text-indigo-600 dark:text-indigo-400 font-medium text-sm hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
             >
               baesrixsystems.in
-            </a>
+            </div>
           </div>
 
           <div className="md:text-right max-w-xs lg:max-w-sm">
@@ -41,14 +40,12 @@ const Footer = () => {
               <p>Madanapalle, Chittoor,</p>
               <p>Andhra Pradesh, India, 517325</p>
             </address>
-            <a 
-              href="https://baesrixsystems.in" 
-              target="_blank" 
+            <div 
               rel="noopener noreferrer"
               className="inline-block  dark:text-slate-400 font-medium text-sm text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
               contact@baesrixsystems.in
-            </a>
+            </div>
           </div>
 
         </div>
