@@ -69,7 +69,7 @@ export const SolutionsPage = () => {
           Problems we are built to solve.
         </h1>
         <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl mx-auto">
-          Most software problems are not inherently technical - they are structural. Poor architecture, misaligned tools, and broken processes cause more friction than bad code. We work backwards from your operational bottlenecks, not forwards from a generic service menu, to build systems that actually fix the underlying issue.
+          The systems we design address recurring operational gaps such as disconnected tools, manual data handling, and lack of visibility across teams.
         </p>
       </motion.div>
 

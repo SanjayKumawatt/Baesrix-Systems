@@ -9,7 +9,7 @@ const services = [
     icon: Cloud,
     title: 'Salesforce Services',
     subtitle: 'Admin, Development & Automation',
-    description: 'Stop fighting your CRM. We optimize Salesforce to match your actual business processes, ensuring clean data, automated workflows, and dashboards that leadership can actually trust.',
+    description: 'We extend Salesforce into a structured system where data flows cleanly, processes run automatically, and reporting reflects actual business activity.',
     features: [
       'Salesforce Administration & User Mgmt',
       'Custom Development (Apex, LWC)',
@@ -30,7 +30,7 @@ const services = [
     icon: Code2,
     title: 'Web App Development',
     subtitle: 'Modern React & TypeScript Systems',
-    description: 'We build fast, maintainable web applications designed for scale. Whether it\'s an internal tool to replace spreadsheets or a customer-facing portal, you get clean code and complete documentation.',
+    description: 'We design application layers that support internal operations and customer-facing systems, built to remain stable as usage and complexity increase.',
     features: [
       'Custom React + TypeScript Applications',
       'Internal Business Tools & Dashboards',
@@ -50,7 +50,7 @@ const services = [
     icon: Sparkles,
     title: 'AI App Services',
     subtitle: 'Practical Automation & Assistants',
-    description: 'Move beyond hype with AI tools that actually save time. We integrate LLMs into your existing workflows to automate support, summarize data, and unlock knowledge from your internal docs.',
+    description: 'We introduce AI into operational workflows where it reduces manual effort-such as processing documents, assisting decision-making, and structuring unorganized data.',
     features: [
       'Custom AI Chatbots (Internal/External)',
       'Knowledge Base Q&A Systems',
@@ -99,8 +99,7 @@ const ServicesOverview = () => {
             What we build
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400">
-            Three focused areas. No bloat, no generalist promises.
-          </p>
+Three core components that power how our system operates and evolves.          </p>
         </motion.div>
 
         <motion.div 

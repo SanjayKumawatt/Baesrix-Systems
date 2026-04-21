@@ -39,19 +39,19 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, x: 20 },
-  show: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { duration: 0.5, ease: 'easeOut' } 
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, ease: 'easeOut' }
   }
 };
 
 const leftVariants = {
   hidden: { opacity: 0, y: 30 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: 'easeOut' } 
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' }
   }
 };
 
@@ -60,9 +60,9 @@ const WhyBaesrix = () => {
     <section className="py-24 px-6 bg-white dark:bg-slate-950">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          
+
           {/* Left Column - Editorial Content */}
-          <motion.div 
+          <motion.div
             variants={leftVariants}
             initial="hidden"
             whileInView="show"
@@ -79,25 +79,24 @@ const WhyBaesrix = () => {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]">
-              We are a small, focused engineering team. That is the point.
-            </h2>
-            
+              We operate as a focused engineering unit, working directly on system design and execution without unnecessary layers between planning and development.            </h2>
+
             <p className="text-base text-slate-600 dark:text-slate-300 mb-10 leading-relaxed">
               Most software shops grow their team and add layers of management. We stay small on purpose - so every project gets senior attention, not delegation. When you partner with Baesrix, you are bypassing the bloat of traditional agencies. We build bespoke systems tailored to your exact operational needs without the overhead that slows development down.
             </p>
 
             <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-200/50 dark:shadow-none relative">
               <div className="absolute inset-0 bg-slate-900/10 dark:bg-slate-950/40 z-10 mix-blend-multiply pointer-events-none"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                alt="Clean code workspace" 
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Clean code workspace"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 relative z-0"
               />
             </div>
           </motion.div>
 
           {/* Right Column - Differentiators List */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
@@ -108,7 +107,7 @@ const WhyBaesrix = () => {
               {differentiators.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <motion.div 
+                  <motion.div
                     key={item.id}
                     variants={itemVariants}
                     className="flex gap-6 py-10 border-b border-slate-200 dark:border-slate-800 last:border-0 group"
@@ -118,7 +117,7 @@ const WhyBaesrix = () => {
                         <Icon className="text-indigo-600 dark:text-indigo-400" size={24} strokeWidth={2} />
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
                         {item.title}

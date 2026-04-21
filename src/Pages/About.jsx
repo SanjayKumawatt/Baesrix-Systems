@@ -73,7 +73,7 @@ export const AboutUsPage = () => {
             
             <motion.div variants={itemVariants} className="flex flex-col gap-6 text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
               <p>
-                BAESRIX TECH (OPC) PRIVATE LIMITED is a focused engineering company incorporated in Andhra Pradesh. We are building a practice around three core things: Salesforce optimization, modern web applications, and practical AI integrations. 
+                BAESRIX TECH (OPC) PRIVATE LIMITED is a focused engineering company incorporated in Andhra Pradesh.Our work is centered around combining CRM systems, application layers, and AI-driven processes into a unified structure that supports day-to-day business operations.
               </p>
               <p>
                 A small team means every client engagement gets real, senior attention - not a junior developer handed a brief by an account manager who does not understand the code. We are deliberately structuring our operations to avoid the bloated hierarchies of traditional tech agencies.

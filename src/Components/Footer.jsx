@@ -17,11 +17,11 @@ const Footer = () => {
                           <img src={logo} className='h-8' alt="" />
               
               <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-                Baesrix Systems
+                Baesrix
               </span>
             </div>
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-              We build clean, maintainable software and practical AI solutions for businesses that value robust architecture over quick fixes.
+              Our work focuses on creating structured systems that remain stable, understandable, and adaptable over time.
             </p>
             <div
               className="inline-flex text-indigo-600 dark:text-indigo-400 font-medium text-sm hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"

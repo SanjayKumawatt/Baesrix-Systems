@@ -96,7 +96,8 @@ const Hero = () => {
             variants={itemVariants}
             className="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed"
           >
-            Baesrix builds Salesforce solutions, web applications, and AI tools for businesses that want software done cleanly - not just quickly.
+            Baesrix develops an integrated system that connects CRM, internal tools, and AI-driven processes into a single operational layer for businesses.
+            Instead of fragmented software and manual workflows, our system brings data, automation, and decision-making into one place.
           </motion.p>
 
           <motion.div 
@@ -119,20 +120,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown size={20} className="text-slate-400 dark:text-slate-500" />
-        </motion.div>
-      </motion.div>
       
     </section>
   );
