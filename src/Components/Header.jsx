@@ -40,7 +40,8 @@ export const Header = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
+    { name: 'Platform', path: '/platform' },
+    { name: 'Technology', path: '/technology' },
     { name: 'Solutions', path: '/solutions' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' }
@@ -83,13 +84,6 @@ export const Header = () => {
           </nav>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors"
-              aria-label="Toggle Theme"
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

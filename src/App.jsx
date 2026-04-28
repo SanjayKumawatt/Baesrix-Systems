@@ -9,6 +9,9 @@ import AboutUsPage from './Pages/About'
 import ContactPage from './Pages/ContactPage'
 import PrivacyPolicy from './Pages/Privacy'
 import TermsOfService from './Pages/Terms'
+import PlatformPage from './Pages/Platform'
+import TechArchitecture from './Pages/Tech'
+import ProblemSolutionPage from './Pages/ProblemSolutions'
 
 const App = () => {
 
@@ -23,12 +26,16 @@ const App = () => {
           element:<Home/>
         },
         {
-          path:"/services",
-          element:<ServicesPage/>
+          path:"/technology",
+          element:<TechArchitecture/>
+        },
+        {
+          path:"/platform",
+          element:<PlatformPage/>
         },
         {
           path:"/solutions",
-          element:<SolutionsPage/>
+          element:<ProblemSolutionPage/>
         },
         {
           path:"/about",

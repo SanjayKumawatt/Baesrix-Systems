@@ -1,19 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, Clock, ShieldCheck, Mail, MapPin, CheckCircle2, Loader2, Send } from 'lucide-react';
+import { 
+  MessageSquare, 
+  Clock, 
+  ShieldCheck, 
+  Mail, 
+  MapPin, 
+  CheckCircle2, 
+  Loader2, 
+  Send, 
+  Target, 
+  Users, 
+  Rocket 
+} from 'lucide-react';
 
-const preNotes = [
+const whyJoinNotes = [
   {
-    icon: MessageSquare,
-    text: "No brief required. A plain description of your problem is enough to start."
-  },
-  {
-    icon: Clock,
-    text: "We respond within one working day. Usually faster."
+    icon: Target,
+    text: "Direct product influence - your feedback shapes features and priorities."
   },
   {
     icon: ShieldCheck,
-    text: "No sales calls unless you ask for one. We reply by email first."
+    text: "Priority onboarding and dedicated support from the founding team."
+  },
+  {
+    icon: Rocket,
+    text: "Early adopter pricing locked in for life and first access to new modules."
   }
 ];
 
@@ -49,9 +61,8 @@ export const ContactPage = () => {
       setIsSubmitting(false);
       setIsSuccess(true);
       setShowToast(true);
-      setFormData({ name: '', email: '', company: '', message: '' }); // Clear form
+      setFormData({ name: '', email: '', company: '', message: '' }); 
 
-      // Reset button state and hide toast after 5 seconds
       setTimeout(() => {
         setIsSuccess(false);
         setShowToast(false);
@@ -62,7 +73,7 @@ export const ContactPage = () => {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-32 pb-24 selection:bg-indigo-100 selection:text-indigo-900 dark:selection:bg-indigo-900/50 dark:selection:text-indigo-100 relative">
       
-      {/* Floating Toast Notification (Unique Feedback) */}
+      {/* Floating Toast Notification */}
       <AnimatePresence>
         {showToast && (
           <motion.div
@@ -76,7 +87,7 @@ export const ContactPage = () => {
               <CheckCircle2 className="text-emerald-500 dark:text-emerald-600" size={18} strokeWidth={3} />
             </div>
             <p className="text-sm font-bold text-white dark:text-slate-900 whitespace-nowrap">
-              Thanks - we will be in touch within one working day.
+              Application received - we will be in touch within 48 hours.
             </p>
           </motion.div>
         )}
@@ -89,14 +100,14 @@ export const ContactPage = () => {
         transition={{ duration: 0.7, ease: 'easeOut' }}
         className="max-w-7xl mx-auto px-6 mb-16 md:mb-24"
       >
-        <span className="inline-block py-1.5 px-4 rounded-full bg-indigo-100 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 text-sm font-bold tracking-wide border border-indigo-200 dark:border-indigo-500/20 mb-6">
-          GET IN TOUCH
+        <span className="inline-block py-1.5 px-4 rounded-full bg-indigo-100 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 text-sm font-bold tracking-wide border border-indigo-200 dark:border-indigo-500/20 mb-6 uppercase">
+          Early Access Program
         </span>
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.05]">
-          Let's talk about the work.
+          Join the Baesrix Early Access.
         </h1>
-        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
-          We do not require formal RFPs or extensive documentation to start a conversation. Tell us what you are trying to solve in plain language, and we will tell you honestly if we are the right team to build it.
+        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl">
+          Baesrix is opening early access to a select group of businesses who want to be among the first to experience a truly unified operational platform. Shape the product, influence the roadmap, and gain a significant advantage.
         </p>
       </motion.div>
 
@@ -111,12 +122,13 @@ export const ContactPage = () => {
             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
             className="lg:col-span-5 flex flex-col"
           >
+            {/* Why Join Section */}
             <div className="mb-12">
               <h3 className="text-sm font-extrabold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-6">
-                3 things to know before you write
+                Why Join Early Access?
               </h3>
               <div className="space-y-4">
-                {preNotes.map((note, index) => {
+                {whyJoinNotes.map((note, index) => {
                   const Icon = note.icon;
                   return (
                     <div key={index} className="flex items-start gap-4 p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-xl">
@@ -132,25 +144,49 @@ export const ContactPage = () => {
               </div>
             </div>
 
+            {/* Who Should Apply Section */}
+            <div className="mb-12 p-6 bg-indigo-50 dark:bg-indigo-900/10 rounded-2xl border border-indigo-100 dark:border-indigo-900/20">
+              <h3 className="text-sm font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-4">
+                Who Should Apply?
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  "Growing SMBs frustrated by SaaS complexity",
+                  "Founders building scalable processes from start",
+                  "Teams relying on manual data entry or silos",
+                  "SaaS companies seeking unified internal tooling"
+                ].map((item, i) => (
+                  <li key={i} className="flex gap-2 text-sm text-slate-600 dark:text-slate-300 items-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-400" /> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Direct Contact Details */}
             <div className="pt-10 border-t border-slate-200 dark:border-slate-800">
               <h3 className="text-sm font-extrabold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-6">
-                Direct Contact Details
+                Application Details
               </h3>
               
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-6">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 mt-0.5">
                     <Mail className="text-slate-600 dark:text-slate-400" size={20} />
                   </div>
                   <div>
-                    <span className="block text-xs font-bold text-slate-400 dark:text-slate-500 mb-1 uppercase tracking-wide">
-                      Email
-                    </span>
-                    <div
-                      className="text-base font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 hover:underline transition-all"
-                    >
-                      contact@baesrixsystems.in
-                    </div>
+                    <span className="block text-xs font-bold text-slate-400 dark:text-slate-500 mb-1 uppercase tracking-wide">Official Email</span>
+                    <div className="text-base font-bold text-indigo-600 dark:text-indigo-400">contact@baesrixsystems.in</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 mt-0.5">
+                    <Clock className="text-slate-600 dark:text-slate-400" size={20} />
+                  </div>
+                  <div>
+                    <span className="block text-xs font-bold text-slate-400 dark:text-slate-500 mb-1 uppercase tracking-wide">Response Time</span>
+                    <div className="text-sm md:text-base font-medium text-slate-700 dark:text-slate-300">Within 48 business hours</div>
                   </div>
                 </div>
 
@@ -159,15 +195,8 @@ export const ContactPage = () => {
                     <MapPin className="text-slate-600 dark:text-slate-400" size={20} />
                   </div>
                   <div>
-                    <span className="block text-xs font-bold text-slate-400 dark:text-slate-500 mb-1 uppercase tracking-wide">
-                      Headquarters
-                    </span>
-                    <address className="text-sm md:text-base font-medium text-slate-700 dark:text-slate-300 not-italic leading-relaxed max-w-xs">
-                      2-250-f-14 Reddys Colony,<br />
-                      Behind Bhashyam School,<br />
-                      Madanapalle, Chittoor,<br />
-                      Andhra Pradesh, India - 517325
-                    </address>
+                    <span className="block text-xs font-bold text-slate-400 dark:text-slate-500 mb-1 uppercase tracking-wide">Location</span>
+                    <div className="text-sm md:text-base font-medium text-slate-700 dark:text-slate-300">Andhra Pradesh, India</div>
                   </div>
                 </div>
               </div>
@@ -185,20 +214,20 @@ export const ContactPage = () => {
               <div className="flex flex-col gap-6">
                 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-bold text-slate-900 dark:text-white">Your Name <span className="text-red-500">*</span></label>
+                  <label className="text-sm font-bold text-slate-900 dark:text-white">Your Name & Role <span className="text-red-500">*</span></label>
                   <input 
                     type="text" 
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="What should we call you?"
+                    placeholder="e.g. Rahul, Operations Lead"
                     disabled={isSubmitting || isSuccess}
                     className="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600 disabled:opacity-60"
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-bold text-slate-900 dark:text-white">Email Address <span className="text-red-500">*</span></label>
+                  <label className="text-sm font-bold text-slate-900 dark:text-white">Work Email <span className="text-red-500">*</span></label>
                   <input 
                     type="email" 
                     name="email"
@@ -211,32 +240,33 @@ export const ContactPage = () => {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-bold text-slate-900 dark:text-white">Company or Organisation</label>
+                  <label className="text-sm font-bold text-slate-900 dark:text-white">Company Name & Size</label>
                   <input 
                     type="text" 
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    placeholder="Optional - leave blank if not applicable"
+                    placeholder="e.g. Acme SaaS, 25 members"
                     disabled={isSubmitting || isSuccess}
                     className="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all placeholder:text-slate-400 dark:placeholder:text-slate-600 disabled:opacity-60"
                   />
                 </div>
 
                 <div className="flex flex-col gap-2 mb-2">
-                  <label className="text-sm font-bold text-slate-900 dark:text-white">What are you trying to build or fix? <span className="text-red-500">*</span></label>
+                  <label className="text-sm font-bold text-slate-900 dark:text-white">Project Detail & Stack <span className="text-red-500">*</span></label>
                   <textarea 
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    placeholder="Describe the problem or project in plain terms. No brief format needed."
+                    placeholder="Tell us about:
+1. Primary operational challenge
+2. Current tools (CRM, Workflow, etc.)"
                     disabled={isSubmitting || isSuccess}
                     className="w-full px-5 py-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all resize-y placeholder:text-slate-400 dark:placeholder:text-slate-600 disabled:opacity-60"
                   ></textarea>
                 </div>
 
-                {/* Transforming Submit Button */}
                 <button 
                   onClick={handleSubmit}
                   disabled={isSubmitting || isSuccess || !formData.name.trim() || !formData.email.trim() || !formData.message.trim()}
@@ -248,34 +278,17 @@ export const ContactPage = () => {
                 >
                   <AnimatePresence mode="wait">
                     {isSubmitting ? (
-                      <motion.div
-                        key="loading"
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.5 }}
-                        className="flex items-center gap-2"
-                      >
+                      <motion.div key="loading" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.5 }}>
                         <Loader2 className="animate-spin" size={24} />
                       </motion.div>
                     ) : isSuccess ? (
-                      <motion.div
-                        key="success"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-2"
-                      >
+                      <motion.div key="success" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2">
                         <CheckCircle2 size={22} strokeWidth={2.5} />
-                        <span>Message Sent</span>
+                        <span>Application Sent</span>
                       </motion.div>
                     ) : (
-                      <motion.div
-                        key="default"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="flex items-center gap-2"
-                      >
-                        <span>Start the Conversation</span>
+                      <motion.div key="default" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2">
+                        <span>Apply for Early Access</span>
                         <Send size={18} className="ml-1" />
                       </motion.div>
                     )}
@@ -285,9 +298,29 @@ export const ContactPage = () => {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
+
+      {/* GTM Strategy Section */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="max-w-7xl mx-auto px-6 mt-32"
+      >
+        <div className="p-8 md:p-12 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200 dark:border-slate-800">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-8">Go-to-Market Strategy</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-slate-600 dark:text-slate-400 leading-relaxed text-sm md:text-base">
+            <p>
+              Our initial go-to-market strategy is focused on a deliberate, high-touch approach designed to acquire the right early customers rather than the most. We are targeting SMBs and SaaS companies through direct outreach to operations leaders and partnerships with design partners.
+            </p>
+            <p>
+              This allows us to gather rich, structured feedback from real users during the MVP phase - which we then feed directly into product development. Once core modules are stable and validated, we will layer in content-led inbound growth and referral-driven expansion.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
     </div>
   );
 };

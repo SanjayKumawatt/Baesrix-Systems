@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const techGroups = [
   {
@@ -22,42 +21,18 @@ const techGroups = [
   }
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-};
-
-const pillVariants = {
-  hidden: { opacity: 0, y: 15, scale: 0.95 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1,
-    transition: { duration: 0.4, ease: 'easeOut' } 
-  }
-};
-
 const TechStack = () => {
   return (
     <section className="py-24 px-6 bg-white dark:bg-slate-950">
       <div className="max-w-5xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
-            Tools we work with
+            Core Technology Stack
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300">
-            No stack evangelism - we use what is right for the job.
+            No stack evangelism-we architect systems using the right tools for the job.
           </p>
-        </motion.div>
+        </div>
 
         <div className="flex flex-col gap-12">
           {techGroups.map((group) => (
@@ -66,23 +41,16 @@ const TechStack = () => {
                 {group.title}
               </h3>
               
-              <motion.div 
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-50px" }}
-                className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-3xl"
-              >
+              <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-3xl">
                 {group.tags.map((tag, index) => (
-                  <motion.span
+                  <span
                     key={index}
-                    variants={pillVariants}
                     className={`px-5 py-2 rounded-full text-sm font-medium select-none ${group.pillClass}`}
                   >
                     {tag}
-                  </motion.span>
+                  </span>
                 ))}
-              </motion.div>
+              </div>
             </div>
           ))}
         </div>

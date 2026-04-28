@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Cloud, Code2, Sparkles, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +8,7 @@ const services = [
     icon: Cloud,
     title: 'Salesforce Services',
     subtitle: 'Admin, Development & Automation',
-    description: 'We extend Salesforce into a structured system where data flows cleanly, processes run automatically, and reporting reflects actual business activity.',
+    description: 'We structure Salesforce environments where data flows cleanly, processes run automatically, and reporting reflects actual business activity.',
     features: [
       'Salesforce Administration & User Mgmt',
       'Custom Development (Apex, LWC)',
@@ -22,15 +21,15 @@ const services = [
       { label: 'Dev Rate', value: 'Starting ₹2,500 / hour' },
       { label: 'Engagement', value: 'Min. 5 hours' }
     ],
-    buttonText: 'Request Support',
-    footerText: 'Direct access to certified experts.'
+    buttonText: 'Discuss Requirements',
+    footerText: 'Direct access to the development team.'
   },
   {
     id: 2,
     icon: Code2,
     title: 'Web App Development',
     subtitle: 'Modern React & TypeScript Systems',
-    description: 'We design application layers that support internal operations and customer-facing systems, built to remain stable as usage and complexity increase.',
+    description: 'We engineer application layers that support internal operations and customer-facing systems, built to remain stable as complexity increases.',
     features: [
       'Custom React + TypeScript Applications',
       'Internal Business Tools & Dashboards',
@@ -50,7 +49,7 @@ const services = [
     icon: Sparkles,
     title: 'AI App Services',
     subtitle: 'Practical Automation & Assistants',
-    description: 'We introduce AI into operational workflows where it reduces manual effort-such as processing documents, assisting decision-making, and structuring unorganized data.',
+    description: 'We integrate AI into operational workflows where it reduces manual effort-such as processing documents and structuring unorganized data.',
     features: [
       'Custom AI Chatbots (Internal/External)',
       'Knowledge Base Q&A Systems',
@@ -67,54 +66,25 @@ const services = [
   }
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: 'easeOut' } 
-  }
-};
-
 const ServicesOverview = () => {
   return (
     <section className="py-24 px-6 bg-slate-50 dark:bg-slate-950">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-5 tracking-tight">
-            What we build
+            Core Capabilities
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400">
-Three core components that power how our system operates and evolves.          </p>
-        </motion.div>
+            The fundamental engineering services we provide to build and scale your technical infrastructure.
+          </p>
+        </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <motion.div
+              <div
                 key={service.id}
-                variants={cardVariants}
                 className="flex flex-col bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/60 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5 dark:hover:shadow-indigo-500/20"
               >
                 {/* Header Icon */}
@@ -130,7 +100,7 @@ Three core components that power how our system operates and evolves.          <
                   {service.subtitle}
                 </p>
                 
-                {/* Description - Made slightly brighter in dark mode */}
+                {/* Description */}
                 <p className="text-sm text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
                   {service.description}
                 </p>
@@ -138,7 +108,7 @@ Three core components that power how our system operates and evolves.          <
                 {/* Features List */}
                 <div className="mb-8">
                   <h4 className="text-[11px] font-bold text-slate-400 dark:text-slate-400 mb-4 uppercase tracking-wider">
-                    WHAT WE OFFER:
+                    TECHNICAL FOCUS:
                   </h4>
                   <ul className="space-y-3">
                     {service.features.map((feature, index) => (
@@ -158,7 +128,7 @@ Three core components that power how our system operates and evolves.          <
                 {/* Pricing Section */}
                 <div className="pt-6 border-t border-slate-100 dark:border-slate-700/50">
                   <h4 className="text-[11px] font-bold text-slate-400 dark:text-slate-400 mb-4 uppercase tracking-wider">
-                    PRICING:
+                    ENGAGEMENT MODEL:
                   </h4>
                   <div className="space-y-2 mb-6">
                     {service.pricing.map((price, idx) => (
@@ -169,11 +139,11 @@ Three core components that power how our system operates and evolves.          <
                     ))}
                   </div>
 
-                  {/* CTA Button - Flat Matte Finish (No shiny effects) */}
+                  {/* CTA Button */}
                   <Link to={"/contact"}>
-                  <button className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors duration-200 mb-3">
-                    {service.buttonText}
-                  </button>
+                    <button className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white text-sm font-bold rounded-lg transition-colors duration-200 mb-3">
+                      {service.buttonText}
+                    </button>
                   </Link>
                   {/* Footer Text */}
                   <p className="text-center text-[11px] text-slate-400 dark:text-slate-500">
@@ -181,10 +151,10 @@ Three core components that power how our system operates and evolves.          <
                   </p>
                 </div>
 
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
